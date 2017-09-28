@@ -14,7 +14,6 @@ namespace mvvm {
 class Model
 {
     std::unique_ptr<engine::SudokuSolver> solver_;
-
 public:
     // Ctor
     Model();
