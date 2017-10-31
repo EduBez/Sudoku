@@ -10,8 +10,8 @@ using namespace types;
 using namespace std;
 
 //
-//
 //  Class Model
+//
 
 // Ctor
 Model::Model()

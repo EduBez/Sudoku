@@ -149,7 +149,7 @@ bool SudokuSolver::Solve()
 
             mtx_(row, col) = num;
 
-            if (Solve())  {
+            if (Solve()) {
                 return true;
             }
 
