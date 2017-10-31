@@ -10,7 +10,7 @@ that Visual Studio 2017 still offers is the Microsoft Foundation Classes (MFC) t
 The other option I had was to use Windows Forms, but that would require writing the code in C# or in C++/CLI, or
 mixing C# (on the user interface side) with C++. For me that was not an option.
 
-The project was completely written in C++11, using the CLang compiler that comes with C++Builder, and it makes use of
+The project was completely written in C++14, using the CLang compiler that comes with C++Builder, and it makes use of
 the Visual Component Library (VCL) to create the native Windows GUI.
 
 To be able to build the project you will need a free copy of Embarcadero RAD Studio.
