@@ -119,7 +119,7 @@ void ViewModel::Open()
                 // Just chars representing numbers from 1 to 9
                 file >> ch;
 
-                int number = (int)(ch - '0');
+                unsigned int number = (unsigned int)(ch - '0');
 
                 // Store the number in the grid cell
                 model_->AddCell(number, row, col);

@@ -19,7 +19,7 @@ __fastcall TView::TView(TComponent* owner)
     : TForm(owner)
 {
     menuItems_ = vector<TMenuItem*> {Easy, Medium, Hard};
-    viewModel_ = std::make_unique<ViewModel>(this);
+    viewModel_ = make_unique<ViewModel>(this);
 }
 
 void __fastcall TView::OnClearClick(TObject* sender)
