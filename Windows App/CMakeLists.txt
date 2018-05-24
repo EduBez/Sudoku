@@ -1,23 +1,15 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.10)
 
 project(Sudoku)
+set(CMAKE_BUILD_TYPE "DEBUG")
 
-set_embt_target(VCL)
+# Create a sources variable with a link to all cpp files to compile
+file(GLOB SOURCES
+    "*.h"
+    "*.cpp"
+)
 
-add_executable(Sudoku
-             , Sudoku.cpp
-             , Model.cpp
-             , Model.h
-             , SudokuHelper.cpp
-             , SudokuHelper.h
-             , SudokuSolver.cpp
-             , SudokuSolver.h
-             , Typedefs.cpp
-             , Typedefs.h
-             , View.cpp
-             , View.h
-             , ViewModel.h
-             , ViewModel.cpp
-             , SudokuPCH1.h)
+set_embt_target("VCL")
+add_executable(Sudoku WIN32 ${SOURCES})
 
-
+# cmake -DCMAKE_C_COMPILER=bcc64.exe -DCMAKE_CXX_COMPILER=bcc64.exe -G Ninja
