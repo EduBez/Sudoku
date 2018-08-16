@@ -66,16 +66,21 @@ bool SudokuSolver::AvailableOnRow(int row, int num)
     #endif
 }
 
-bool SudokuSolver::AvailableOnRange(int row, int col, int num)
+bool SudokuSolver::AvailableOnRegion(int row, int col, int num)
 {
+    // Apply rule to access the 3x3 region
+    // relative to the passed 'row' & 'col'
+    auto r3w = row - (row % 3);
+    auto c3l = col - (col % 3);
+
     for (int r=0; r < 3; ++r)
     {
         for (int c=0; c < 3; ++c)
         {
-            auto i = r + row;
-            auto j = c + col;
+            auto row = r + r3w;
+            auto col = c + c3l;
 
-            if (mtx_(i, j) == num) {
+            if (mtx_(row, col) == num) {
                 return false;
             }
         }
@@ -96,13 +101,9 @@ bool SudokuSolver::CheckConstraints(Cell& cell, int num)
     auto row = get<0>(cell);
     auto col = get<1>(cell);
 
-    auto r = row - row % 3;
-    auto c = col - col % 3;
-
-    bool result = AvailableOnRow   (row , num) &&
-                  AvailableOnCol   (col , num) &&
-                  AvailableOnRange (r, c, num);
-
+    bool result = AvailableOnRow(row, num) &&
+                  AvailableOnCol(col, num) &&
+                  AvailableOnRegion(row, col, num);
     return result;
 }
 

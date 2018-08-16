@@ -26,9 +26,9 @@ class SudokuSolver
     bool AvailableOnRow    (int row,
                             int num);
 
-    bool AvailableOnRange  (int row,
-                            int col,
-                            int num);
+    bool AvailableOnRegion  (int row,
+                             int col,
+                             int num);
 
     bool CheckConstraints  (types::Cell& cell,
                             int          num);
