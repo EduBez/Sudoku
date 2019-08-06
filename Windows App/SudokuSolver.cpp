@@ -77,10 +77,10 @@ bool SudokuSolver::AvailableOnRegion(int row, int col, int num)
     {
         for (int c=0; c < 3; ++c)
         {
-            auto row = r + r3w;
-            auto col = c + c3l;
+            auto ro = r + r3w;
+            auto co = c + c3l;
 
-            if (mtx_(row, col) == num) {
+            if (mtx_(ro, co) == num) {
                 return false;
             }
         }
